@@ -1,4 +1,8 @@
-<p align="center"><a href="https://www.eteczonaleste.com.br/" target="_blank"><img src="public/etec.png" width="200" alt="Site oficial da Etec Zona Leste"></a></p>
+<div align="center">
+  <a href="https://www.eteczonaleste.com.br/" target="_blank" title="Site oficial da Etec Zona Leste">
+    <img src="public/etec.png" width="200" alt="Site oficial da Etec Zona Leste">
+  </a>
+</div>
 
 <div align="center">
   <img align="center" alt="PHP" src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
