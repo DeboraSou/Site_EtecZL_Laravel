@@ -163,15 +163,17 @@
 
     <!-- Contatos. --> 
     <div class="flex flex-wrap justify-center items-center gap-10 mt-8 mb-8">
-        <div class="max-w-xs w-full bg-white border-3 border-gray-200 rounded-lg overflow-hidden shadow-md  cursor-pointer">
+        <div class="max-w-xs w-full bg-white border-3 border-gray-200 rounded-lg overflow-hidden shadow-md">
             <div class="p-4">
                 <div class="flex justify-center text-gray-900">
+                <a href="mailto:e211adm@cps.sp.gov.br.com">
                     <span class="material-symbols-outlined text-blue-700 hover:text-red-800 transition-colors 0.5s ease-in duration-500 cursor-pointer" style="font-size: 60px;">alternate_email</span>
+                </a>
                 </div>
 
                 <div class="text-center mt-4">
                     <h3 class="text-lg font-semibold">E-mail</h3>
-                    <a href="mailto:e211adm@cps.sp.gov.br.com">Enviar e-mail para Etec Zona Leste</a><br>
+                    <p>Enviar e-mail para Etec Zona Leste</p><br>
                 </div>
             </div>
         </div>
@@ -179,38 +181,44 @@
         <div class="max-w-xs w-full bg-white border-3 border-gray-200 rounded-lg overflow-hidden shadow-md">
             <div class="p-4">
                 <div class="flex justify-center text-gray-900">
+                <a href="https://api.whatsapp.com/send?phone=551120454012">
                     <span class="material-symbols-outlined text-blue-700 hover:text-red-800 transition-colors 0.5s ease-in duration-500 cursor-pointer" style="font-size: 60px;">p2p</span>
+                </a>
                 </div>
 
                 <div class="text-center mt-4 text-gray-900">
                     <h3 class="text-lg font-semibold">WhatsApp</h3>
-                    <a href="https://api.whatsapp.com/send?phone=551120454012">Entrar em contato pelo WhatsApp</a><br>
+                    <p>Entrar em contato pelo WhatsApp</p><br>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-xs w-full bg-white border-3 border-gray-200 rounded-lg overflow-hidden shadow-md cursor-pointer">
+        <div class="max-w-xs w-full bg-white border-3 border-gray-200 rounded-lg overflow-hidden shadow-md">
             <div class="p-4">
                 <div class="flex justify-center">
+                <a href="https://www.instagram.com/eteczonalesteoficial/">
                     <span class="material-symbols-outlined text-blue-700 hover:text-red-800 transition-colors 0.5s ease-in duration-500 cursor-pointer" style="font-size: 60px;">add_a_photo</span>
+                </a>
                 </div>
 
                 <div class="text-center mt-4">
                     <h3 class="text-lg font-semibold">Instagram</h3>
-                    <a href="https://www.instagram.com/eteczonalesteoficial/">Entrar em contato pelo instragram.</a><br>
+                    <p>Entrar em contato pelo instragram.</p><br>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-xs w-full bg-white border-3 border-gray-200 rounded-lg overflow-hidden shadow-md cursor-pointer">
+        <div class="max-w-xs w-full bg-white border-3 border-gray-200 rounded-lg overflow-hidden shadow-md">
             <div class="p-4">
                 <div class="flex justify-center">
+                <a href="https://www.facebook.com/Eteczonalesteoficial">
                     <span class="material-symbols-outlined text-blue-700 hover:text-red-800 transition-colors 0.5s ease-in duration-500 cursor-pointer" style="font-size: 60px;">groups</span>
+                </a>
                 </div>
 
                 <div class="text-center mt-4">
                     <h3 class="text-lg font-semibold">Facebook</h3>
-                    <a href="https://www.facebook.com/Eteczonalesteoficial">Entrar em contato pelo facebook.</a><br>
+                    <p>Entrar em contato pelo facebook.</p><br>
                 </div>
             </div>
         </div>
