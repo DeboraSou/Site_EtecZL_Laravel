@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://www.eteczonaleste.com.br/" target="_blank" title="Site oficial da Etec Zona Leste">
+  <a href="https://www.eteczonaleste.com.br/" title="Site oficial da Etec Zona Leste" target="_blank" rel='noopener noreferrer'>
     <img src="public/etec.png" width="200" alt="Site oficial da Etec Zona Leste">
   </a>
 </div>
