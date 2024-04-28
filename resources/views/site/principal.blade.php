@@ -64,7 +64,7 @@
     transition: all 1s;
     cursor: pointer;
     text-transform: uppercase;
-}
+    }
 
     .sign_btn::after,
     .sign_btn::before {
