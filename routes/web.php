@@ -51,6 +51,8 @@ Route::get('/vestibulinho', 'App\Http\Controllers\VestibulinhoController@princip
 Route::get('/noticias', 'App\Http\Controllers\NoticiasController@principal')->name('site.noticias');
 
 Route::get('/contato', 'App\Http\Controllers\ContatoController@principal')->name('site.contato');
+Route::post('/contato', 'App\Http\Controllers\ContatoController@submit')->name('site.contato.submit');
+
 
 Route::get('/fornecedores', 'App\Http\Controllers\FornecedorController@index')->name('site.fornecedores');
 
