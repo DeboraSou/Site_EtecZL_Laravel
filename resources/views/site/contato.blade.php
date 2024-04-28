@@ -52,6 +52,65 @@
     ::-webkit-scrollbar-track {
         background-color: #a7cad4;
     }
+
+    .sign_btn {
+    position: relative;
+    margin: 30px 0 10px 0;
+    padding: 12px 30px;
+    background: transparent;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    transition: all 1s;
+    cursor: pointer;
+    text-transform: uppercase;
+    }
+
+    .sign_btn::after,
+    .sign_btn::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transition: all 1s ease-in-out;
+    }
+
+    .sign_btn::after {
+        top: 1px;
+        left: 1px;
+        border-top: 3px solid var(--primary);
+        border-left: 3px solid var(--quinary);
+    }
+
+    .sign_btn::before {
+        bottom: 1px;
+        right: 1px;
+        border-bottom: 3px solid var(--primary);
+        border-right: 3px solid var(--quinary);
+    }
+
+    .sign_btn:hover {
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .sign_btn:hover::before,
+    .sign_btn:hover::after {
+        width: 100%;
+        height: 100%;
+    }
+
+    .sign_btn_link {
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        font-size: 1em;
+        font-weight: 600;
+        color: var(--secondary);
+        position: relative;
+        z-index: 2;
+    }
 </style>
 
 <body>
@@ -224,11 +283,94 @@
         </div>
     </div>
 
-    <div class="bg-gray-200 p-1 mb-10">
+    <div class="p-1 mb-10 bg-gray-200">
     <div class="container mx-auto mt-8">
         <h3 class="flex text-3xl font-bold mb-4 justify-center text-blue-900">Localização</h3>
         <div class="aspect-w-16 aspect-h-8 pb-10">
             <iframe class="w-full h-full" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7316.517623704203!2d-46.475812!3d-23.523192!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce616495555555%3A0x8076d1577db86cf1!2sEtec%20da%20Zona%20Leste!5e0!3m2!1spt-BR!2sbr!4v1712880853547!5m2!1spt-BR!2sbr" style="border:0;  width=600 height=450" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    </div>
+
+    <!-- Formulário de contato. -->
+    <div class="flex flex-col items-center justify-center py-8 px-5">
+        <h2 class="text-3xl font-bold mb-4 flex justify-center text-blue-900">Envie-nos uma Mensagem</h2>
+        
+        <div class="flex flex-col md:flex-row items-center justify-center gap-30">
+            <div class="w-full md:w-1/2">
+                <div style="border: 5px solid #E5E7EB; border-radius: 5px;">
+                <img src="{{ asset('formulario_contato.png') }}" alt="Senhorita digitando no laptop." class="w-full h-auto">
+            </div>
+        </div>
+        
+        <div class="w-full md:w-1/2 mt-4 md:mt-0 mx-8">
+            <form method="POST" id="contactForm" action="{{ route('site.contato.submit') }}">
+                @csrf
+                <!-- Nome Completo. -->
+                <div>
+                    <label for="fullname" :value="__('')" ></label>
+                    
+                    <input id="fullname"
+                            type="text" 
+                            name="fullname"
+                            :value="old('fullname')"
+                            placeholder="Nome Completo"
+                            required
+                            autofocus 
+                            autocomplete="name"
+                            class="block mt-1 w-full text-blue-700 "/>
+                    <span id="fullnameError" class="error text-red-600 font-[Inter]"></span>
+                </div>
+
+                <!-- Telefone. -->
+                <div class="mt-4">
+                    <label for="phone" :value="__('')" ></label>
+
+                    <input id="phone"
+                            type="tel" 
+                            name="phone"
+                            :value="old('phone')"
+                            placeholder="(11) 90000-0000"                            
+                            required
+                            autocomplete="off"
+                            class="block mt-1 w-full text-blue-700 "/>
+                    <span id="phoneError" class="error text-red-600 font-[Inter]"></span>
+                </div>
+
+                <!-- E-mail. -->
+                <div class="mt-4">
+                    <label for="email" :value="__('')"></label>
+
+                    <input id="email"
+                            type="email" 
+                            name="email"
+                            :value="old('email')"
+                            placeholder="exemplo.123@email.com"
+                            required
+                            autocomplete="email"
+                            class="block mt-1 w-full text-blue-700 "/>
+                    <span id="emailError" class="error text-red-600 font-[Inter]"></span>
+                </div>
+
+                <!-- Mensagem. -->
+                <div class="mt-4">
+                    <label for="message" :value="__('')"></label>
+
+                    <textarea id="message"
+                                type="text"
+                                name="message"
+                                placeholder="Digite sua mensagem aqui..."
+                                required
+                                autocomplete="off"
+                                class="block mt-1 w-full h-60 resize-none text-blue-700 "></textarea>
+                    <span id="messageError" class="error text-red-600 font-[Inter]"></span>
+                </div>
+                
+                <div class="flex items-center justify-center mt-4">
+                    <button type="submit" class="sign_btn ms-3 text-blue-900 font-[Inter] duration-500 px-6 py-2 mx-4 bg-transparent hover:text-gray-900 hover:bg-transparent transition-all 0.5s ease-in;" style="color: #040404;">Enviar</button>
+                </div>
+                
+            </form>
         </div>
     </div>
     </div>
@@ -245,37 +387,98 @@
         });
     </script>
 
-<footer class="bg-gray-200 border border-opacity-10 border-t-4 border-red-800 text-gray-900 pt-10 pb-5">
-    <div class="flex justify-center items-center">
-        <a href="/">
-            <img src="{{ asset('etec.png') }}" alt="Logo da EtecZL." class="w-20 cursor-pointer ">
-        </a>
-    </div>
+    <!-- Lógica do formulário de contato. -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let contactForm = document.getElementById('contactForm');
 
-    <div class="flex justify-center items-center mt-8">
-         <!-- Ícone do Facebook. -->
-         <a href="https://www.facebook.com/Eteczonalesteoficial">
-            <span class="material-symbols-outlined text-gray-900 hover:text-blue-800 transition-colors 0.5s ease-in duration-500 cursor-pointer text-secondary text-base no-underline py-1 px-3 hover:border-none font-bold mr-4" style="font-size: 40px;">groups</span>
-        </a>
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault();
 
-        <!-- Ícone do YouTube. -->
-        <a href="https://www.youtube.com/@etecdazonaleste2949">
-            <span class="material-symbols-outlined text-gray-900 hover:text-red-800 transition-colors 0.5s ease-in duration-500 cursor-pointer text-secondary text-base no-underline py-1 px-3 hover:border-none font-bold mr-4" style="font-size: 40px;">play_circle</span>
-        </a>
+                document.querySelectorAll('.error').forEach(function (element) {
+                    element.textContent = '';
+                });
 
-        <!-- Ícone do Instagram. -->
-        <a href="https://www.instagram.com/eteczonalesteoficial/">
-            <span class="material-symbols-outlined text-gray-900 hover:text-violet-800 transition-colors 0.5s ease-in duration-500 cursor-pointer text-secondary text-base no-underline py-1 px-3 hover:border-none font-bold mr-4" style="font-size: 40px;">add_a_photo</span>
-        </a>
-    </div>
+                let fullname = document.getElementById('fullname').value.trim();
+                let phone = document.getElementById('phone').value.trim();
+                let email = document.getElementById('email').value.trim();
+                let message = document.getElementById('message').value.trim();
 
-    <p class="text-gray-900 text-center text-sm mt-12">
+                console.log("%cNome:", "color: #2c067a; background-color: #d4cde4;", fullname);
+                console.log("%cTelefone:", "color: #130bee; background-color: #cfcefb;", phone);
+                console.log("%cEmail:", "color: #008000; background-color: #cce5cc;", email);
+                console.log("%cMensagem:", "color: #c90076; background-color: #f4cce3;", message);
+
+                let fullnameRegex = /^[A-ZÀ-Ú][a-zà-ú]+(?: [A-ZÀ-Ú][a-zà-ú]+)+$/;
+                if (!fullnameRegex.test(fullname)) {
+                    console.log("%cPor favor, insira seu nome completo.", "color: #2c067a; background-color: #d4cde4; font-size: 16px;");
+                    document.getElementById('fullnameError').textContent = 'Por favor, insira seu nome completo.';
+                    return;
+                }
+
+                let phoneRegex = /^\(\d{2}\) [1-9]\d{4}-\d{4}$/;
+                if (!phoneRegex.test(phone)) {
+                    console.log("%cPor favor, insira seu telefone.", "color: #130bee; background-color: #cfcefb; font-size: 16px;");
+                    document.getElementById('phoneError').textContent = 'Por favor, insira seu telefone.';
+                    return;
+                }
+
+                let emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+                if (!emailRegex.test(email)) {
+                    console.log("%cPor favor, insira seu email.", "color: #008000; background-color: #cce5cc; font-size: 16px;");
+                    document.getElementById('emailError').textContent = 'Por favor, insira seu email.';
+                    return;
+                }
+
+                let messageRegex = /^.{10,}$/;
+                if (!messageRegex.test(message)) {
+                    console.log("%cPor favor, insira sua mensagem.", "color: #c90076; background-color: #f4cce3; font-size: 16px;");
+                    document.getElementById('messageError').textContent = 'Por favor, insira sua mensagem.';
+                    return;
+                }
+
+                this.submit();
+
+                alert("Mensagem enviada com sucesso!");
+            });
+        } else {
+            console.error("%cElemento 'contactForm' não encontrado.", "color: red; font-size: 16px;");
+        }
+    });
+    </script>
+
+    <footer class="bg-gray-200 border border-opacity-10 border-t-4 border-red-800 text-gray-900 pt-10 pb-5">
+        <div class="flex justify-center items-center">
+            <a href="/">
+                <img src="{{ asset('etec.png') }}" alt="Logo da EtecZL." class="w-20 cursor-pointer ">
+            </a>
+        </div>
+        
+        <div class="flex justify-center items-center mt-8">
+            <!-- Ícone do Facebook. -->
+            <a href="https://www.facebook.com/Eteczonalesteoficial">
+                <span class="material-symbols-outlined text-gray-900 hover:text-blue-800 transition-colors 0.5s ease-in duration-500 cursor-pointer text-secondary text-base no-underline py-1 px-3 hover:border-none font-bold mr-4" style="font-size: 40px;">groups</span>
+            </a>
+
+            <!-- Ícone do YouTube. -->
+            <a href="https://www.youtube.com/@etecdazonaleste2949">
+                <span class="material-symbols-outlined text-gray-900 hover:text-red-800 transition-colors 0.5s ease-in duration-500 cursor-pointer text-secondary text-base no-underline py-1 px-3 hover:border-none font-bold mr-4" style="font-size: 40px;">play_circle</span>
+            </a>
+
+            <!-- Ícone do Instagram. -->
+            <a href="https://www.instagram.com/eteczonalesteoficial/">
+                <span class="material-symbols-outlined text-gray-900 hover:text-violet-800 transition-colors 0.5s ease-in duration-500 cursor-pointer text-secondary text-base no-underline py-1 px-3 hover:border-none font-bold mr-4" style="font-size: 40px;">add_a_photo</span>
+            </a>
+        </div>
+        
+        <p class="text-gray-900 text-center text-sm mt-12">
         Copyright © 2024 Etec Zona Leste. Todos os direitos reservados.
-    </p>
+        </p>
 
-    <p class="text-gray-900 text-center text-sm mt-5">
+        <p class="text-gray-900 text-center text-sm mt-5">
         Desenvolvido por DS - DEV.
-    </p>
+        </p>
     </footer>
 
 </body>
