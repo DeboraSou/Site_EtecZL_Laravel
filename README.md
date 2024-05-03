@@ -2,16 +2,16 @@
   <a href="https://www.eteczonaleste.com.br/" title="Site oficial da Etec Zona Leste" target="_blank" rel='noopener noreferrer'>
     <img src="public/etec.png" width="200" alt="Site oficial da Etec Zona Leste">
   </a>
-</div>
+</div>&nbsp;
 
 <div align="center">    
   <a href="https://www.php.net/docs.php" title="PHP | DOC" target="_blank" rel='noopener noreferrer'>
     <img align="center" alt="PHP" src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
-  </a>
+  </a>&nbsp;&nbsp;
 
   <a href="https://laravel.com/docs/11.x" title="Laravel | DOC" target="_blank" rel='noopener noreferrer'>
     <img align="center" alt="Laravel" src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" />
-  </a>
+  </a>&nbsp;&nbsp;
 
   <a href="https://dev.mysql.com/doc/" title="MySQL | DOC" target="_blank" rel='noopener noreferrer'>
     <img align="center" alt="MySQL" src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" />
